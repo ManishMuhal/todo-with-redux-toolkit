@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  background-color: #0000009b;
+}
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root:last-of-type{
+  margin-top: 5px;
+}
+.input-text{
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+}

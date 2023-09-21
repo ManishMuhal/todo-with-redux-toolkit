@@ -1,0 +1,90 @@
+.new-tabe button {
+    margin: 5px 20px;
+    font-size: 20px;
+    padding: 5px;
+   
+}
+
+.task-body {
+    height: 100vh;
+}
+
+.inp-box {
+   
+    height: 134px;
+    width: 303px;
+    margin: 20px;
+    padding: 5px;
+    position: absolute;
+    z-index: 99;
+    background: #2c2b2ba8;
+    top: 105px;
+}
+
+.inp-box p {
+    text-align: center;
+    color: #fff;
+}
+
+.inp-box button {
+    margin: 2px 6px;
+    font-size: 15px;
+    padding: 8px 34px;
+    cursor: pointer;
+   
+  
+  
+}
+
+.inp-box button:last-child {
+    background-color: rgba(134, 246, 6, 0.669);
+    color: #fff;
+    border: 1px solid #0000006d;
+    cursor: pointer;
+}
+
+.inp-box input {
+    padding: 10px 57px 10px 14px;
+    font-size: 16px;
+    margin: 10px 8px 5px;
+    
+    border: 1px solid;
+}
+
+.multilist {
+    display: flex;
+}
+
+.box-list h3 {
+    margin-left: 55px;
+    
+}
+.box-list {
+    position: relative;
+    
+}
+
+.box-task {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    height: 150px;
+    width: 150px;
+    background-color: #fff;
+  
+}
+
+
+
+i.fa.fa-trash-o{
+   cursor: pointer;
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   font-size: 18px;
+}
+i.fa.fa-trash-o:hover{
+    color: rgba(255, 60, 0, 0.76);
+    transition: 0.8s;
+}
