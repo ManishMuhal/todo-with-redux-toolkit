@@ -41,9 +41,7 @@ export const todoSlice = createSlice({
       state.input = state.tasks[action.payload];
       state.isEditing = action.payload;
     },
-    // clearTasks: (state) => {
-    //   state.tasks = [];
-    // },
+ 
   },
 });
 export const { setInput, addTask, deleteTask, editTask, clearTasks } = todoSlice.actions;

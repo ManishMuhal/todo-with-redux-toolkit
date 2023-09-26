@@ -49,15 +49,9 @@ export const CardSlice = createSlice({
         return index !== action.payload;
       });
     },
-
-
-    editTask: function (state, action) {
-      state.input = state.tasks[action.payload];
-      state.isEditing = action.payload;
-    },
   },
 });
-export const { setInput, addTask, deleteTask, editTask, clearTasks } = CardSlice.actions;
+export const { setInput, addTask, deleteTask,} = CardSlice.actions;
 const todoReducer = CardSlice.reducer;
 
 export default todoReducer;

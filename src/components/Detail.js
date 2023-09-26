@@ -48,15 +48,11 @@ function Detail() {
                           <textarea defaultValue=" Enter Your Notes"></textarea>
                         </div>
                         <div>
-
                           <div className="options">
-
-
                             <div className="date">
                               <div>Due Date</div>
                               <button>Today</button>
                               <button>Tomorrow</button>
-
                               <p>Priority</p>
                               <select>
                                 <option value="">None</option>
@@ -79,7 +75,6 @@ function Detail() {
         })}
 
       </div>
-
       <div className="bottom">
         <div className="icc"><AddIcon /></div>
         <div className="bcc">
@@ -88,8 +83,7 @@ function Detail() {
             <input type="text" placeholder="New task..."
               value={init.input}
               onChange={(e) => dispatch(setInput(e.target.value))}
-              
-            />
+              />
          
           </form>
         </div>

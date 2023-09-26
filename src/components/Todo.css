@@ -88,3 +88,14 @@ i.fa.fa-trash-o:hover{
     color: rgba(255, 60, 0, 0.76);
     transition: 0.8s;
 }
+.fa.fa-pencil-square-o{
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 18px;
+}
+.fa.fa-pencil-square-o:hover{
+    color: rgba(50, 136, 3, 0.768);
+    transition: 0.8s;
+}
