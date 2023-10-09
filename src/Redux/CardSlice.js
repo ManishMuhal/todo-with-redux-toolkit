@@ -1,57 +1,53 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-export const CardSlice = createSlice({
-  name: "CardSlice",
-  initialState: {
-    input: "",
-    tasks: [],
-    isEditing: false,
+const initialData = {
+  list: [],
+};
 
-  },
+const CardSlice = createSlice({
+  name: 'list',
+  initialState: initialData,
   reducers: {
-    setInput: function (state, action) {
-      state.input = action.payload;
+    createList: (state, action) => {
+      const newList = {
+        name: action.payload,
+        items: [],
+        id: state.list.length + 1,
+        receivedData: {
+          id: state.list.length + 1,
+          additionalData: [],
+        },
+      };
+      state.list.push(newList);
     },
+    pushToArray: (state, action) => {
+      const { receivedData, itemToPush } = action.payload;
+      const listIndex = state.list.findIndex((list) => list.  id === receivedData.id);
 
+      if (listIndex !== -1) {
+        const updatedReceivedData = {
+          parent_id: receivedData.id,
+          additionalData: [
+            ...state.list[listIndex].receivedData.additionalData.map((item, index) => ({
+              ...item,
+              child_id: index + 1,
+            })),
+            {
+              ...itemToPush,
+              child_id: state.list[listIndex].receivedData.additionalData.length + 1,
+            },
+          ],
+        };
 
-    addTask: function (state, action) {
-
-      const input = state.input.trim(); 
-
-      if (input !== "") { 
-        if (state.isEditing === false) {
-          state.tasks = [...state.tasks, input];
-        } else {
-          state.tasks[state.isEditing] = input;
-          state.isEditing = false;
-        }
-        state.input = "";
+        state.list[listIndex].receivedData = updatedReceivedData;
       }
     },
-    addTaskss: function (state, action) {
-
-      const input = state.input.trim(); 
-
-      if (input !== "") { 
-        if (state.isEditing === false) {
-          state.tasks = [...state.tasks, input];
-        } else {
-          state.tasks[state.isEditing] = input;
-          state.isEditing = false;
-        }
-        state.input = "";
-      }
-    },
-
-
-    deleteTask: function (state, action) {
-      state.tasks = state.tasks.filter((task, index) => {
-        return index !== action.payload;
-      });
+    deleteList: (state, action) => {
+      const updatedList = action.payload;
+      state.list = updatedList;
     },
   },
 });
-export const { setInput, addTask, deleteTask,} = CardSlice.actions;
-const todoReducer = CardSlice.reducer;
 
-export default todoReducer;
+export const { createList, pushToArray,deleteList } = CardSlice.actions;
+export default CardSlice.reducer;

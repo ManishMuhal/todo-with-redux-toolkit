@@ -99,3 +99,62 @@ i.fa.fa-trash-o:hover{
     color: rgba(50, 136, 3, 0.768);
     transition: 0.8s;
 }
+.chekbox{
+    width: 100%;
+    float: left;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    
+}
+#check{
+   width: 17px;
+   height: 30px;
+}
+.new-tabe {
+    display: flex;
+}
+.new-tabe button {
+    margin: 5px 12px;
+    font-size: 12px;
+    padding: 8px 18px;
+    background-color: rgba(84, 237, 13, 0.688);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* {{checkedItems.length > 0 && (
+  <button onClick={handleDeleteSelected}>Delete</button>
+  )}} */
