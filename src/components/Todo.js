@@ -21,11 +21,11 @@ function Todo() {
 
   useEffect(() => { }, [ListItem]);
 
-  function handleCreate(e) {
-    e.preventDefault();
-    setButtonValue(false);
-    dispatch(pushToArray());
-  }
+  // function handleCreate(e) {
+  //   e.preventDefault();
+  //   setButtonValue(false);
+  //   dispatch(pushToArray());
+  // }
 
   const handleButton = () => {
     setButtonValue(true);
@@ -36,7 +36,7 @@ function Todo() {
   };
 
   const handlePath = (data) => {
-    navigate(`/list-detail/`);
+    navigate(`/list-detail/`, {state:data});
   };
 
   const handleCreateTodo = () => {
@@ -126,7 +126,7 @@ function Todo() {
                   onChange={(event) => handleCheckboxChange(event, index)}
                 />
               </div>
-              <div className="box-task" onClick={() => handlePath(item)}>
+              <div className="box-task" onClick={() => handlePath(item.id )}>
 
                 <div>
 
@@ -141,11 +141,6 @@ function Todo() {
                 </div>
               </div>
               <h3>{item.name}</h3>
-              {/* <input
-                    type="checkbox"
-                    checked={isItemChecked}
-                    onChange={(event) => handleCheckboxChange(event, index)}
-                  /> */}
             </div>
           );
         })}

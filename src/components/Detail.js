@@ -8,13 +8,19 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useParams } from "react-router";
 
 
 
 function Detail() {
+  const {id} = useParams()
   const dispatch = useDispatch();
   const init = useSelector((state) => {
-    return state.todo;
+    // return state.todo;
+     
+    // state.List.list.find((list)=>list.id=== id )
+    const list = state.List.list.find((list) => list.id === id);
+    return  state.todo
   });
 
   const listId = 1;
@@ -54,7 +60,8 @@ function Detail() {
   return (
     <div className="List-input">
       <div className="Todos">
-      {init.tasks.map((task, index) => {
+      {
+      init.tasks.map((task, index) => {
   return (
     <div className="Detail-page" key={index}>
       <div className="boxex">
@@ -138,4 +145,3 @@ function Detail() {
 }
 
 export default Detail;
-

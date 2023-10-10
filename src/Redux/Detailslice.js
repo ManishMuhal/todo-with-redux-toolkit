@@ -50,6 +50,3 @@ export const { setInput, addTask, deleteTask, editTask, updatePriority} = todoSl
 const todoReducer = todoSlice.reducer;
 
 export default todoReducer;
-
-
-
